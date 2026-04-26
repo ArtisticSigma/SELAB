@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCD Calculator</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 5px;
+        }
+        input[type="button"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <script type="text/javascript"> 
+        function gcd() {
+            var x, y;
+            x = parseInt(document.myform.n1.value);
+            y = parseInt(document.myform.n2.value);
+
+            while (x !== y) { 
+                if (x > y) {
+                    x = x - y;
+                } else {
+                    y = y - x;
+                }
+            }
+            document.myform.result.value = x;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>GCD Calculator</h1>
+    <hr color="red">
+
+    <center>
+        <form name="myform">
+            <label for="n1">Number 1:</label>
+            <input type="text" name="n1" id="n1"> <br><br>
+
+            <label for="n2">Number 2:</label>
+            <input type="text" name="n2" id="n2"> <br><br>
+
+            <input type="button" value="Get GCD" onclick="gcd()"> <br><br>
+
+            <label for="result">GCD is:</label>
+            <input type="text" name="result" id="result" readonly>
+        </form>
+    </center>
+
+</body>
+</html>
